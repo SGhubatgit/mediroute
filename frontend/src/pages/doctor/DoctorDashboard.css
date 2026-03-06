@@ -1,0 +1,784 @@
+/* ── Layout ─────────────────────────────── */
+.dd-layout {
+  display: flex;
+  min-height: 100vh;
+  background: var(--bg);
+}
+
+/* ── Sidebar ────────────────────────────── */
+.dd-sidebar {
+  width: 240px;
+  min-height: 100vh;
+  background: #0d1f1b;
+  display: flex;
+  flex-direction: column;
+  padding: 20px 0;
+  flex-shrink: 0;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow-y: auto;
+}
+
+.dd-sidebar-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 20px 24px;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  margin-bottom: 8px;
+}
+
+.dd-sidebar-logo-icon {
+  width: 36px;
+  height: 36px;
+  background: var(--accent);
+  border-radius: 9px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.dd-sidebar-logo-text {
+  font-family: 'DM Serif Display', serif;
+  font-size: 18px;
+  color: white;
+}
+
+.dd-doctor-profile {
+  padding: 16px 20px 20px;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  margin-bottom: 8px;
+}
+
+.dd-doctor-avatar {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--accent), var(--accent-mid));
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'DM Serif Display', serif;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.dd-doctor-name {
+  font-size: 14px;
+  font-weight: 600;
+  color: white;
+  margin-bottom: 3px;
+}
+
+.dd-doctor-dept {
+  font-size: 12px;
+  color: rgba(255,255,255,0.4);
+}
+
+.dd-nav {
+  flex: 1;
+  padding: 4px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.dd-nav-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  border-radius: 8px;
+  background: none;
+  border: none;
+  color: rgba(255,255,255,0.5);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.15s;
+  text-align: left;
+  position: relative;
+}
+
+.dd-nav-item:hover {
+  background: rgba(255,255,255,0.06);
+  color: rgba(255,255,255,0.85);
+}
+
+.dd-nav-item--active {
+  background: rgba(42,143,118,0.2) !important;
+  color: #5ecfba !important;
+}
+
+.dd-nav-badge {
+  margin-left: auto;
+  background: #C4501A;
+  color: white;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 2px 7px;
+  border-radius: 999px;
+  min-width: 20px;
+  text-align: center;
+}
+
+.dd-logout {
+  margin: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 12px;
+  background: none;
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 8px;
+  color: rgba(255,255,255,0.4);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.dd-logout:hover {
+  background: rgba(255,255,255,0.06);
+  color: rgba(255,255,255,0.7);
+}
+
+/* ── Main ───────────────────────────────── */
+.dd-main {
+  flex: 1;
+  overflow-y: auto;
+  min-width: 0;
+}
+
+.dd-content {
+  padding: 32px 36px;
+  max-width: 900px;
+}
+
+.dd-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 80px;
+  gap: 16px;
+  color: var(--text-muted);
+}
+
+.dd-page-header {
+  margin-bottom: 28px;
+}
+
+.dd-page-title {
+  font-size: 28px;
+  margin-bottom: 4px;
+}
+
+.dd-page-sub {
+  font-size: 14px;
+  color: var(--text-muted);
+}
+
+/* Stats */
+.dd-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+.dd-stat-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px;
+  text-align: center;
+}
+
+.dd-stat-icon {
+  font-size: 24px;
+  margin-bottom: 8px;
+}
+
+.dd-stat-value {
+  font-family: 'DM Serif Display', serif;
+  font-size: 36px;
+  margin-bottom: 6px;
+  line-height: 1;
+}
+
+.dd-stat-label {
+  font-size: 12px;
+  color: var(--text-muted);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Section */
+.dd-section {
+  margin-bottom: 28px;
+}
+
+.dd-section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+
+.dd-section-title {
+  font-size: 18px;
+}
+
+.dd-section-link {
+  background: none;
+  border: none;
+  color: var(--accent);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+/* Schedule List */
+.dd-schedule-list {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.dd-schedule-row {
+  display: grid;
+  grid-template-columns: 72px 90px 1fr 1fr 20px;
+  align-items: center;
+  gap: 16px;
+  padding: 12px 20px;
+  border-bottom: 1px solid var(--border);
+  font-size: 14px;
+}
+
+.dd-schedule-row:last-child { border-bottom: none; }
+
+.dd-schedule-token {
+  font-family: 'DM Serif Display', serif;
+  font-size: 15px;
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.dd-schedule-time {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.dd-schedule-name {
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.dd-schedule-age {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.dd-schedule-symptoms {
+  font-size: 12px;
+  color: var(--text-secondary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.dd-sev-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+/* Empty */
+.dd-empty {
+  text-align: center;
+  padding: 32px;
+  color: var(--text-muted);
+  font-size: 14px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+
+.dd-empty--large {
+  padding: 64px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  font-size: 16px;
+}
+
+/* ── Queries Layout ──────────────────────── */
+.dd-queries-layout {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.dd-query-list {
+  width: 100%;
+  border-right: 1px solid var(--border);
+  overflow-y: auto;
+  transition: width 0.2s ease;
+  padding: 28px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.dd-query-list--shrunk {
+  width: 360px;
+  min-width: 360px;
+  flex-shrink: 0;
+}
+
+.dd-filter-tabs {
+  display: flex;
+  gap: 4px;
+  margin-top: 12px;
+}
+
+.dd-filter-tab {
+  padding: 6px 14px;
+  border-radius: 999px;
+  border: 1.5px solid var(--border);
+  background: transparent;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.dd-filter-tab:hover { border-color: var(--accent); color: var(--accent); }
+
+.dd-filter-tab--active {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: white;
+}
+
+/* Query Cards */
+.dd-query-card {
+  padding: 14px 0;
+  border-bottom: 1px solid var(--border);
+  cursor: pointer;
+  transition: background 0.12s;
+  border-radius: 0;
+}
+
+.dd-query-card:hover { background: var(--surface-alt); }
+.dd-query-card--active { background: var(--accent-light) !important; }
+.dd-query-card--unread .dd-query-subject { font-weight: 700; }
+
+.dd-query-card-top {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 6px;
+}
+
+.dd-query-patient-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--surface-alt);
+  border: 1.5px solid var(--border);
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 15px;
+  flex-shrink: 0;
+}
+
+.dd-query-patient-name {
+  font-weight: 600;
+  font-size: 13px;
+  color: var(--text-primary);
+}
+
+.dd-query-time {
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+.dd-query-meta { flex: 1; min-width: 0; }
+
+.dd-query-subject {
+  font-size: 13px;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.dd-query-preview {
+  font-size: 12px;
+  color: var(--text-muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-bottom: 8px;
+}
+
+.dd-query-status-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.dd-priority-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.dd-unread-badge {
+  background: var(--accent);
+  color: white;
+  font-size: 10px;
+  font-weight: 700;
+  padding: 2px 6px;
+  border-radius: 999px;
+}
+
+.dd-appt-token {
+  font-size: 11px;
+  background: var(--surface-alt);
+  color: var(--text-muted);
+  padding: 2px 8px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+}
+
+/* Status Pills */
+.dd-status-pill {
+  font-size: 11px;
+  font-weight: 600;
+  padding: 3px 10px;
+  border-radius: 999px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.dd-status-pill--pending { background: #FEF3ED; color: #C4501A; border: 1px solid #F4C4A8; }
+.dd-status-pill--seen { background: var(--medium-bg); color: var(--medium); border: 1px solid var(--medium-border); }
+.dd-status-pill--replied { background: var(--low-bg); color: var(--low); border: 1px solid var(--low-border); }
+.dd-status-pill--closed { background: var(--surface-alt); color: var(--text-muted); border: 1px solid var(--border); }
+
+/* ── Chat Panel ──────────────────────────── */
+.dd-chat-panel {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: var(--surface);
+}
+
+.dd-chat-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 24px;
+  border-bottom: 1px solid var(--border);
+  flex-shrink: 0;
+}
+
+.dd-chat-back {
+  background: none;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+  color: var(--text-muted);
+  padding: 4px;
+  display: none;
+}
+
+.dd-chat-patient-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--surface-alt);
+  border: 1.5px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  color: var(--text-secondary);
+  flex-shrink: 0;
+}
+
+.dd-chat-patient-name {
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.dd-chat-patient-sub {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.dd-chat-patient-info { flex: 1; }
+
+.dd-chat-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.dd-close-btn {
+  padding: 6px 14px;
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: transparent;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.dd-close-btn:hover { border-color: var(--warning); color: var(--warning); }
+
+.dd-chat-symptoms {
+  background: var(--surface-alt);
+  border-bottom: 1px solid var(--border);
+  padding: 10px 24px;
+  font-size: 13px;
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.dd-chat-messages {
+  flex: 1;
+  overflow-y: auto;
+  padding: 20px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.dd-msg { display: flex; }
+.dd-msg--doctor { justify-content: flex-end; }
+.dd-msg--patient { justify-content: flex-start; }
+
+.dd-msg-bubble {
+  max-width: 70%;
+  padding: 12px 16px;
+  border-radius: 16px;
+}
+
+.dd-msg--doctor .dd-msg-bubble {
+  background: var(--accent);
+  color: white;
+  border-bottom-right-radius: 4px;
+}
+
+.dd-msg--patient .dd-msg-bubble {
+  background: var(--surface-alt);
+  border: 1px solid var(--border);
+  border-bottom-left-radius: 4px;
+}
+
+.dd-msg-sender {
+  font-size: 11px;
+  font-weight: 700;
+  margin-bottom: 4px;
+  opacity: 0.7;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.dd-msg-content {
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.dd-msg-time {
+  font-size: 10px;
+  margin-top: 4px;
+  opacity: 0.6;
+  text-align: right;
+}
+
+.dd-chat-input {
+  padding: 16px 24px;
+  border-top: 1px solid var(--border);
+  display: flex;
+  gap: 12px;
+  align-items: flex-end;
+  flex-shrink: 0;
+}
+
+.dd-chat-textarea {
+  flex: 1;
+  padding: 10px 14px;
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-sm);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  resize: none;
+  outline: none;
+  transition: border-color 0.15s;
+}
+.dd-chat-textarea:focus { border-color: var(--accent); }
+
+.dd-send-btn {
+  padding: 10px 20px;
+  flex-shrink: 0;
+  gap: 6px;
+}
+
+/* ── Appointments Table ───────────────────── */
+.dd-appt-table-wrap {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.dd-appt-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.dd-appt-table th {
+  background: var(--surface-alt);
+  padding: 12px 16px;
+  text-align: left;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--text-muted);
+  border-bottom: 1px solid var(--border);
+}
+
+.dd-appt-table td {
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--border);
+  vertical-align: middle;
+}
+
+.dd-appt-table tr:last-child td { border-bottom: none; }
+
+.dd-appt-table tr:hover td { background: var(--surface-alt); }
+
+.dd-token-chip {
+  font-family: 'DM Serif Display', serif;
+  font-size: 15px;
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.dd-appt-patient { font-weight: 600; }
+.dd-appt-age { font-size: 12px; color: var(--text-muted); }
+.dd-appt-symp { color: var(--text-secondary); font-size: 13px; }
+
+.dd-sev-label {
+  font-weight: 600;
+  font-size: 13px;
+}
+
+/* ── Today Schedule Cards ─────────────────── */
+.dd-schedule-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 14px;
+}
+
+.dd-schedule-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  position: relative;
+}
+
+.dd-sc-number {
+  font-size: 11px;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+.dd-sc-token {
+  font-family: 'DM Serif Display', serif;
+  font-size: 28px;
+  color: var(--accent);
+  line-height: 1;
+}
+
+.dd-sc-time {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.dd-sc-divider {
+  height: 1px;
+  background: var(--border);
+  margin: 4px 0;
+}
+
+.dd-sc-name {
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.dd-sc-age {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.dd-sc-symptoms {
+  font-size: 12px;
+  color: var(--text-secondary);
+  line-height: 1.4;
+}
+
+.dd-sc-sev {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border: 1px solid;
+  margin-top: 4px;
+  align-self: flex-start;
+}
+
+@media (max-width: 900px) {
+  .dd-sidebar { display: none; }
+  .dd-content { padding: 20px 16px; }
+  .dd-stats-grid { grid-template-columns: repeat(2, 1fr); }
+  .dd-query-list--shrunk { width: 100%; display: none; }
+  .dd-chat-back { display: flex; }
+}

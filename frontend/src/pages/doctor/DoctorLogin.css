@@ -1,0 +1,188 @@
+.dl-page {
+  min-height: 100vh;
+  background: var(--bg);
+  position: relative;
+  padding: 40px 0 80px;
+}
+
+.dl-bg {
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(135deg, #0a2e26 0%, #1A6B5A 50%, #0d3d30 100%);
+  opacity: 0.04;
+  pointer-events: none;
+}
+
+.dl-container {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.dl-back {
+  background: none;
+  border: none;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  color: var(--text-muted);
+  cursor: pointer;
+  padding: 0;
+  transition: color 0.15s;
+  text-align: left;
+}
+.dl-back:hover { color: var(--accent); }
+
+.dl-header {
+  text-align: center;
+  padding: 20px 0;
+}
+
+.dl-logo {
+  width: 64px;
+  height: 64px;
+  background: linear-gradient(135deg, var(--accent), var(--accent-mid));
+  border-radius: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 16px;
+  box-shadow: 0 8px 24px rgba(26,107,90,0.3);
+}
+
+.dl-title {
+  font-size: 32px;
+  margin-bottom: 8px;
+}
+
+.dl-sub {
+  font-size: 15px;
+  color: var(--text-muted);
+}
+
+.dl-loading {
+  display: flex;
+  justify-content: center;
+  padding: 40px;
+}
+
+.dl-dept-group {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.dl-dept-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+  padding-left: 4px;
+}
+
+.dl-doctors-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 10px;
+}
+
+.dl-doctor-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 16px;
+  background: var(--surface);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius);
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.15s;
+  font-family: 'DM Sans', sans-serif;
+  position: relative;
+}
+
+.dl-doctor-card:hover {
+  border-color: var(--accent);
+  background: var(--accent-light);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+
+.dl-doctor-card--selected {
+  border-color: var(--accent) !important;
+  background: var(--accent-light) !important;
+  box-shadow: 0 0 0 3px rgba(26,107,90,0.15) !important;
+}
+
+.dl-doc-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--accent), var(--accent-mid));
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'DM Serif Display', serif;
+  font-size: 15px;
+  flex-shrink: 0;
+}
+
+.dl-doc-name {
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--text-primary);
+  margin-bottom: 3px;
+}
+
+.dl-doc-spec {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.dl-doc-check {
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 22px;
+  height: 22px;
+  background: var(--accent);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.dl-cta {
+  position: sticky;
+  bottom: 24px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  box-shadow: var(--shadow-lg);
+}
+
+.dl-selected-info {
+  font-size: 14px;
+  color: var(--text-secondary);
+}
+
+.dl-login-btn {
+  flex-shrink: 0;
+  padding: 12px 28px;
+}
